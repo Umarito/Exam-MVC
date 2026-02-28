@@ -30,6 +30,25 @@
                     <span asp-validation-for="Text" class="text-danger"></span>
                 </div>
 
+                <div class="col-12">
+                    <label class="form-label">Tags</label>
+                    <select name="selectedTagIds" class="form-select" multiple size="6">
+                        @foreach (var tag in (IEnumerable<Tag>)ViewBag.Tags)
+                        {
+                            var selectedIds = (IEnumerable<int>)ViewBag.SelectedTagIds;
+                            var isSelected = selectedIds.Contains(tag.Id);
+                            if (isSelected)
+                            {
+                                <option value="@tag.Id" selected>@tag.Name</option>
+                            }
+                            else
+                            {
+                                <option value="@tag.Id">@tag.Name</option>
+                            }
+                        }
+                    </select>
+                </div>
+
                 <div class="col-12 d-flex gap-2">
                     <button type="submit" class="btn btn-primary">Update</button>
                     <a asp-action="Index" class="btn btn-outline-secondary">Back</a>

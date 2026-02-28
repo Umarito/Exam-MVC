@@ -193,3 +193,4 @@ C:\Users\a\Desktop\C#.NET\.Net Second Month\.Net fourth week\Exam\Exam\obj\Debug
 C:\Users\a\Desktop\C#.NET\.Net Second Month\.Net fourth week\Exam\Exam\obj\Debug\net9.0\Exam.pdb
 C:\Users\a\Desktop\C#.NET\.Net Second Month\.Net fourth week\Exam\Exam\obj\Debug\net9.0\Exam.genruntimeconfig.cache
 C:\Users\a\Desktop\C#.NET\.Net Second Month\.Net fourth week\Exam\Exam\obj\Debug\net9.0\ref\Exam.dll
+C:\Users\a\Desktop\C#.NET\.Net Second Month\.Net fourth week\Exam\Exam\obj\Debug\net9.0\Exam.sourcelink.json
