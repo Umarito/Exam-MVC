@@ -1,0 +1,54 @@
+@model Post
+@{
+    ViewData["Title"] = "Create Post";
+}
+
+<div class="container py-4" style="max-width: 840px;">
+    <div class="card shadow-sm">
+        <div class="card-header bg-white">
+            <h3 class="mb-0">Create Post</h3>
+        </div>
+        <div class="card-body">
+            <form asp-action="Create" method="post" class="row g-3">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="col-md-3">
+                    <label asp-for="Id" class="form-label"></label>
+                    <input asp-for="Id" class="form-control" />
+                    <span asp-validation-for="Id" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-9">
+                    <label asp-for="Title" class="form-label"></label>
+                    <input asp-for="Title" class="form-control" placeholder="Post title" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <div class="col-12">
+                    <label asp-for="Text" class="form-label"></label>
+                    <textarea asp-for="Text" class="form-control" rows="4" placeholder="Write your post content..."></textarea>
+                    <span asp-validation-for="Text" class="text-danger"></span>
+                </div>
+
+                <div class="col-12">
+                    <label class="form-label">Tags</label>
+                    <select name="selectedTagIds" class="form-select" multiple size="6">
+                        @foreach (var tag in (IEnumerable<Tag>)ViewBag.Tags)
+                        {
+                            <option value="@tag.Id">@tag.Name</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="col-12 d-flex gap-2">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a asp-action="Index" class="btn btn-outline-secondary">Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
