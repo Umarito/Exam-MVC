@@ -40,9 +40,7 @@ public class PostsController(IPostRepo PostRepo, ApplicationDBContext context) :
 
         if (selectedTagIds.Any())
         {
-            Post.Tags = await _context.Tags
-                .Where(x => selectedTagIds.Contains(x.Id))
-                .ToListAsync();
+            Post.Tags = await _context.Tags.Where(x => selectedTagIds.Contains(x.Id)).ToListAsync();
         }
 
         await _repo.Add(Post);
